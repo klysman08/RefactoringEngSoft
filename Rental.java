@@ -16,7 +16,7 @@ public class Rental {
       return _movie;
    }
 
-  public double getCharge(Rental aRental) {
+  public double getCharge() {
     //determine amounts for each line
     double thisAmount = 0;
     switch (aRental.getMovie().getPriceCode()) {
@@ -37,5 +37,6 @@ public class Rental {
     return thisAmount;
     }
       
+    
       
 }
