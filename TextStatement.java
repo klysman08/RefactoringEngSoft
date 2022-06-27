@@ -1,16 +1,16 @@
 public class TextStatement extends Statement {
 
-    public String getHeader(Customer aCustomer) {
-        return "Rental Record for " + aCustomer.getName() +
-        "\n";
+    protected String getTop(Customer aCustomer) {
+        String result = "Rental Record for " + aCustomer.getName() + "\n";
+        return result;
     }
 
-    public String getRentalFigures(Rental aRental) {
+    protected String getFgs(Rental aRental) {
         return "\t" + aRental.getMovie().getTitle()+ "\t" +
         String.valueOf(aRental.getCharge()) + "\n";
     }
 
-    public String getFooter(Customer aCustomer) {
+    protected String getFoot(Customer aCustomer) {
         String result = "Amount owed is " +
         String.valueOf(aCustomer.getTotalCharge()) + "\n";
         result += "You earned " +
@@ -18,5 +18,4 @@ public class TextStatement extends Statement {
         " frequent renter points";
         return result;
     }
-
 }

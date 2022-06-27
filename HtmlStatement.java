@@ -1,16 +1,16 @@
 public class HtmlStatement extends Statement {
 
-    public String getHeader(Customer aCustomer) {
+    protected String getTop(Customer aCustomer) {
         return "<H1>Rentals for <EM>" + aCustomer.getName() +
         "</EM></H1><P>\n";
     }
 
-    public String getRentalFigures(Rental aRental) {
+    protected String getFgs(Rental aRental) {
         return aRental.getMovie().getTitle()+ ": " +
         String.valueOf(aRental.getCharge()) + "<BR>\n";
     }
 
-    public String getFooter(Customer aCustomer) {
+    protected String getFoot(Customer aCustomer) {
         String result = "<P>You owe <EM>" +
         String.valueOf(aCustomer.getTotalCharge()) + "</EM><P>\n";
         result += "On this rental you earned <EM>" + 
